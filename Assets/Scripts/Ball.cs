@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -43,10 +43,18 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("FallCheck"))
         {
             GameManager.instance.Restart();
+            SoundManager.PlaySound("ballFall");
+
         }
         else if (collision.gameObject.CompareTag("Paddle"))
         {
             GameManager.instance.ScoreUp();
+            SoundManager.PlaySound("ballBounce");
+        }
+        else if (collision.gameObject.CompareTag("Boundary"))
+        {
+            SoundManager.PlaySound("ballBounce");
+
         }
     }
 

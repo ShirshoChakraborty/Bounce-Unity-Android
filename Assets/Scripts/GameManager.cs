@@ -47,5 +47,6 @@ public class GameManager : MonoBehaviour
     {
         gameStartUI.SetActive(false);
         scoreText.gameObject.SetActive(true);
+        SoundManager.PlaySound("gameStart");
     }
 }
