@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private int score;
     public GameObject gameStartUI;
+    public AudioSource gameStartSound;
 
     public Text scoreText;
 
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         gameStartUI.SetActive(false);
         scoreText.gameObject.SetActive(true);
-        SoundManager.PlaySound("gameStart");
+        gameStartSound.Play();
+        //SoundManager.PlaySound("gameStart");
     }
 }

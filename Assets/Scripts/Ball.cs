@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour
     Rigidbody2D rb;
     public float bounceForce;
     bool gameStarted;
+    public AudioSource ballBounce, ballFall;
 
     public void Awake()
     {
@@ -13,7 +14,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -43,18 +44,17 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("FallCheck"))
         {
             GameManager.instance.Restart();
-            SoundManager.PlaySound("ballFall");
+            ballFall.Play();
 
         }
         else if (collision.gameObject.CompareTag("Paddle"))
         {
             GameManager.instance.ScoreUp();
-            SoundManager.PlaySound("ballBounce");
+            ballBounce.Play();
         }
         else if (collision.gameObject.CompareTag("Boundary"))
         {
-            SoundManager.PlaySound("ballBounce");
-
+            ballBounce.Play();
         }
     }
 
