@@ -2,6 +2,7 @@
 
 public class Paddle : MonoBehaviour
 {
+    
     Rigidbody2D rb;
     public float moveSpeed;
 
@@ -10,6 +11,7 @@ public class Paddle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        translate.trans
 
     }
 
